@@ -2,6 +2,7 @@ package hliu.demo.aop;
 
 import hliu.demo.model.Log;
 import hliu.demo.repository.SystemLogRepository;
+
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -65,7 +66,7 @@ public class AopLogService {
             if(method.getName().equals(methodName)){
                 Class[] clazzs = method.getParameterTypes();
                 if(clazzs.length == arguments.length){
-                    description = method.getAnnotation(SystemLogger.class).description();
+                    description = method.getAnnotation(SystemLogger.class).descrption();
                     log.info("getMethodDescription:{}",description);
                     break;
                 }

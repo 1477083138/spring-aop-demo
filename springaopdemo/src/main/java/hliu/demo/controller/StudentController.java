@@ -35,7 +35,7 @@ public class StudentController {
         return studentService.saveStudent(newStudent.getName(),newStudent.getAge());
     }
 
-    @SystemLogger(description = "获取全部学生信息")
+    @SystemLogger(descrption = "获取全部学生信息")
     @GetMapping(path = "/" , params = "!name")
     public List<Student> getAllStudents(){
         return studentService.getAllStudent();
