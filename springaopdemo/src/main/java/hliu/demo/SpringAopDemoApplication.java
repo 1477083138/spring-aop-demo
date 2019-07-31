@@ -4,10 +4,13 @@ import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import java.util.TimeZone;
 
@@ -15,6 +18,7 @@ import java.util.TimeZone;
  * Created by Administrator on 2019/7/26.
  */
 @SpringBootApplication
+@EnableAsync
 @EnableAspectJAutoProxy
 @EnableJpaRepositories
 public class SpringAopDemoApplication {
@@ -35,4 +39,5 @@ public class SpringAopDemoApplication {
             builder.timeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         };
     }
+
 }

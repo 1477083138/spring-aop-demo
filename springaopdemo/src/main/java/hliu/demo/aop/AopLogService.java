@@ -17,13 +17,13 @@ import java.util.Arrays;
 
 /**
  * Created by Administrator on 2019/7/26.
+ * 使用注解实现切点和切面
  */
 
-@Aspect
-@Component
+
 @Slf4j
 public class AopLogService {
-    @Autowired
+   /* @Autowired
     private SystemLogRepository systemLogRepository;
 
     public static final String DEFAULTUSER = "default";
@@ -73,5 +73,5 @@ public class AopLogService {
             }
         }
         return description;
-    }
+    }*/
 }
