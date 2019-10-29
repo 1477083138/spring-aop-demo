@@ -5,6 +5,8 @@ import cn.hutool.json.JSONUtil;
 import hliu.demo.test.test1.bean.Person;
 import hliu.demo.test.test1.util.BeanUtil;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,11 +18,14 @@ public class testPerson {
     public static void main(String args[]){
 
         JSONObject personJson = JSONUtil.createObj();
+        List<String> oldName = null;
+
         personJson.put("id","111111");
         personJson.put("name","liuhao");
         personJson.put("age",1);
-        personJson.put("sex","male");
-        personJson.put("address","China");
+        personJson.put("sex",null);
+        personJson.put("oldName",oldName);
+
 
         Map map = personJson.toBean(Map.class);
 
@@ -30,5 +35,9 @@ public class testPerson {
 
         person.setAge(12);
         System.out.println(person.toString());
+
+        Person person1 = personJson.toBean(Person.class);
+
+        System.out.println(person1);
     }
 }

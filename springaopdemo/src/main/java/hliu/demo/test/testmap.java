@@ -1,5 +1,6 @@
 package hliu.demo.test;
 
+import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 
@@ -47,6 +48,19 @@ public class testmap {
         List<String> imlist = (List<String>) map.get("list");
 
         System.out.println(imlist);
+
+        JSONArray jsonArray = JSONUtil.createArray();
+        JSONObject jsonObject = JSONUtil.createObj();
+        jsonObject.put("1","1");
+        JSONObject jsonObject1 = JSONUtil.createObj();
+        jsonObject1.put("2","2");
+        jsonArray.add(jsonObject);
+        jsonArray.add(jsonObject1);
+        jsonArray.add(JSONUtil.createArray());
+
+        List<JSONObject> jsonObjects = jsonArray.toList(JSONObject.class);
+
+        System.out.println(jsonObjects);
 
     }
 }
