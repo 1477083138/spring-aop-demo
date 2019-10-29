@@ -1,6 +1,5 @@
 package hliu.demo.controller;
 
-import hliu.demo.aop.SystemLogger;
 import hliu.demo.controller.request.NewStudentRequest;
 import hliu.demo.model.Student;
 import hliu.demo.service.StudentService;
@@ -35,7 +34,6 @@ public class StudentController {
         return studentService.saveStudent(newStudent.getName(),newStudent.getAge());
     }
 
-    @SystemLogger(descrption = "获取全部学生信息")
     @GetMapping(path = "/" , params = "!name")
     public List<Student> getAllStudents(){
         return studentService.getAllStudent();

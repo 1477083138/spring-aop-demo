@@ -1,6 +1,5 @@
 package hliu.demo.Listener;
 
-import hliu.demo.aop.SystemLogger;
 import hliu.demo.model.Log;
 import org.springframework.context.ApplicationEvent;
 

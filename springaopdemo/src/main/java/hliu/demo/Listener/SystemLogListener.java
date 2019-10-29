@@ -1,10 +1,8 @@
 package hliu.demo.Listener;
 
-import hliu.demo.aop.SystemLogger;
 import hliu.demo.model.Log;
 import hliu.demo.repository.SystemLogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Async;
