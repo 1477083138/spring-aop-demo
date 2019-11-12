@@ -20,4 +20,5 @@ public class Person implements Serializable {
     private Integer age;
     private String sex;
     private List<String> oldName;
+    private LbStatus status;
 }

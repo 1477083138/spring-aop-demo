@@ -2,6 +2,7 @@ package hliu.demo.lambda;
 
 import hliu.demo.test.test1.bean.Person;
 import java.util.*;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -126,6 +127,17 @@ public class testLambda {
          * skip 操作，数字代表从起始位置开始跳过几个元素，
          * */
         list.stream().skip(1).forEach(System.out::println);
+
+
+        /**
+         * generate()  自定义supplier 创建流
+         * */
+        Random random = new Random();
+
+        Supplier<Integer> randomSupplier = random::nextInt;
+
+        Stream.generate(randomSupplier).limit(10).forEach(r->System.out.println(r));
+
 
     }
 }

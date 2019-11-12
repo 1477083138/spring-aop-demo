@@ -70,7 +70,7 @@ public class SystemLoggerPointcutAdvisor extends StaticMethodMatcherPointcutAdvi
         Object inThis = methodInvocation.getThis();
 
         SystemLogger methodAnnotation = AopUtil.findAnnotation(inThis.getClass(),method,SystemLogger.class);
-        String description = methodAnnotation.descrption();
+        String description = methodAnnotation.description();
         Log log = Log.builder().descp(description).user("defaultUser").build();
         return log;
     }
